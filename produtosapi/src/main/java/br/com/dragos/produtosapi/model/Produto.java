@@ -3,18 +3,21 @@ package br.com.dragos.produtosapi.model;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Getter;
+
 
 @Entity
 public class Produto {
 
     @Id
-    @Column(name = "id")
+    @Column
     private String id;
-    @Column(name = "nome")
+    @Column
     private String nome;
-    @Column(name = "descricao")
+    @Column
     private String descricao;
-    @Column(name = "preco")
+    @Column
     private Double preco;
 
     public Produto(String id, String nome, String descricao, Double preco) {
@@ -32,28 +35,38 @@ public class Produto {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public Double getPreco() {
+        return preco;
     }
 
     public String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "id='" + id + '\'' +
+                ", nome='" + nome + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", preco=" + preco +
+                '}';
     }
 
-    public Double getPreco() {
-        return preco;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public void setPreco(Double preco) {
