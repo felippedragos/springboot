@@ -16,3 +16,6 @@ O objetivo é consolidar conceitos, praticar boas práticas e criar uma base de 
 ---
 
 ## 📂 Estrutura do Repositório
+
+springboot-study/
+├── produtosapi
